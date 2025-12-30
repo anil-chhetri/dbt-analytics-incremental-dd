@@ -1,0 +1,17 @@
+[project]
+name = "dbt-transform"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Anil Kumar Chhetri", email = "59021082+anil-chhetri@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core>=1.11.2",
+    "dbt-duckdb>=1.10.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"
