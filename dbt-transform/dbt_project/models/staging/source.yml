@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: source_data
+    schema: raw
+    database: dev
+    tables:
+      - name: customers
+        description: "This table contains customer information including customer ID, name, and contact details."
+
+      - name: orders
+        description: "This table contains order information including order ID, customer ID, order date, and total amount."
+
+      - name: products
+        description: "This table contains product information including product ID, name, and price."
+
+      - name: order_items
+        description: "This table contains order item details including order item ID, order ID, product ID, quantity, and price."

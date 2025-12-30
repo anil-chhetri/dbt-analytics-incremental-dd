@@ -1,0 +1,9 @@
+dbt-connection:
+  target: dev
+  
+  outputs:
+    dev:
+      type: duckdb
+      path: ./../../dev.duckdb
+      threads: 4
+      schema: dbt_transform

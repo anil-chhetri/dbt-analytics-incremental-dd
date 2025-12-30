@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: "Staging table for customers data"
+    columns:
+      - name: id
+        description: "Unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "Customer's first name"
+        tests:
+          - not_null
+
+      - name: last_name
+        description: "Customer's last name"
+        tests:
+          - not_null
+
+      - name: email
+        description: "Customer's email address"
+        tests:
+          - not_null
+          - unique
+          - email_validation:
+              column_name: email
+              store_failures: true
+              schema: testing
+
+      - name: created_at
+        description: "Timestamp when the customer was created"
+        tests:
+          - not_null
