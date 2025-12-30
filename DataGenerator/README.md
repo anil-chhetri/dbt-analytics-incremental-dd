@@ -29,7 +29,17 @@ Install the package using uv:
 uv add faker duckdb polars --package DataGenerator
 ```
 
-## Usage
+## Database Exploration
+
+After generating data, you can explore the DuckDB database using Harlequin:
+
+```bash
+# Installs Harlequin (a CLI/TUI for DuckDB)
+uv tool install harlequin
+
+# Open the database in Harlequin
+harlequin ./dev.duckdb
+```
 
 ### Generate Data
 Run the main script to generate sample data:
