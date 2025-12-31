@@ -7,3 +7,4 @@ dbt-connection:
       path: ./../../dev.duckdb
       threads: 4
       schema: dbt_transform
+      debug: true

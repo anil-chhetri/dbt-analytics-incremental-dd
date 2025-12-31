@@ -34,3 +34,8 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+
+flags:
+  # Send anonymous usage statistics to dbt Labs
+  send_anonymous_usage_stats: false

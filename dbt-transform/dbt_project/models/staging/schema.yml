@@ -6,31 +6,38 @@ models:
     columns:
       - name: id
         description: "Unique identifier for each customer"
-        tests:
+        data_tests:
           - not_null
           - unique
 
       - name: first_name
         description: "Customer's first name"
-        tests:
+        data_tests:
           - not_null
 
       - name: last_name
         description: "Customer's last name"
-        tests:
+        data_tests:
           - not_null
 
       - name: email
         description: "Customer's email address"
-        tests:
+        data_tests:
           - not_null
           - unique
           - email_validation:
-              column_name: email
+              arguments:
+                column_name: email
               store_failures: true
               schema: testing
+              limit: 10
 
       - name: created_at
         description: "Timestamp when the customer was created"
-        tests:
+        data_tests:
+          - not_null
+
+      - name: phone_number
+        description: "Customer's phone number"
+        data_tests:
           - not_null

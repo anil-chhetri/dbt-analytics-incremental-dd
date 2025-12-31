@@ -3,4 +3,5 @@
   "python.terminal.activateEnvironment": true,
   "python-envs.pythonProjects": [],
   "python.REPL.enableREPLSmartSend": false,
+  "editor.wordWrap": "on"
 }
