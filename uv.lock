@@ -5,7 +5,6 @@ requires-python = ">=3.12"
 [manifest]
 members = [
     "datagenerator",
-    "dbt-analytics-incremental-dd",
     "dbt-transform",
 ]
 
@@ -188,11 +187,6 @@ wheels = [
 ]
 
 [[package]]
-name = "dbt-analytics-incremental-dd"
-version = "0.1.0"
-source = { editable = "." }
-
-[[package]]
 name = "dbt-common"
 version = "1.37.2"
 source = { registry = "https://pypi.org/simple" }
@@ -322,7 +316,7 @@ wheels = [
 [[package]]
 name = "dbt-transform"
 version = "0.1.0"
-source = { editable = "dbt-transform" }
+source = { virtual = "dbt-transform" }
 dependencies = [
     { name = "dbt-core" },
     { name = "dbt-duckdb" },

@@ -1,17 +1,14 @@
 [project]
-name = "dbt-transform"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-authors = [
-    { name = "Anil Kumar Chhetri", email = "59021082+anil-chhetri@users.noreply.github.com" }
-]
+name = "dbt-transform"  # Can be any unique name; doesn't need to match directory
+version = "0.1.0"       # Arbitrary version
 requires-python = ">=3.12"
+description = "dbt transformation models"
+readme = "README.md"
+
 dependencies = [
     "dbt-core>=1.11.2",
     "dbt-duckdb>=1.10.0",
 ]
 
-[build-system]
-requires = ["uv_build>=0.9.21,<0.10.0"]
-build-backend = "uv_build"
+[tool.uv]
+package = false  # Keeps it from being built/installed as a package
