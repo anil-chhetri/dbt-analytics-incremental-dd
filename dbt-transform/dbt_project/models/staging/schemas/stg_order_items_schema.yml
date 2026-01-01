@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_order_item
+    description: "Staging table for order items data"
+    columns:
+      - name: id
+        description: "Unique identifier for each order item"
+        data_tests:
+          - not_null
+
+      - name: order_id
+        description: "Identifier for the order associated with the item"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_order')
+                field: id
+
+      - name: product_id
+        description: "Identifier for the product associated with the order item"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_product')
+                field: id
+
+      - name: quantity
+        description: "Quantity of the product ordered"
+        data_tests:
+          - not_null
+          - check_negative_value:
+              arguments:
+                column_name: "quantity"
+              save_failures: true
+              schema: "testing"
+              limit: 10
+
+      - name: price
+        description: "Unit price of the product at the time of order"
+        data_tests:
+          - not_null
+          - check_negative_value:
+              arguments:
+                column_name: "price"
+              save_failures: true
+              schema: "testing"
+              limit: 10

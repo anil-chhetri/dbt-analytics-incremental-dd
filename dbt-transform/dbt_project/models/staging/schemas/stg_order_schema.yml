@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_order
+    description: "Staging table for orders data."
+    columns:
+      - name: id
+        description: "Unique identifier for each order."
+        data_tests:
+          - not_null
+      - name: customer_id
+        description: "Identifier for the customer who placed the order."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customer')
+                field: id
+      - name: order_date
+        description: "Date when the order was placed."
+        data_tests:
+          - not_null
+      - name: amount
+        description: "Total amount for the order."
+        data_tests:
+          - not_null
+          - check_negative_value:
+              arguments:
+                column_name: amount
+      - name: delivery_status
+        description: "Current delivery_status of the order."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['pending', 'shipped', 'delivered', 'canceled']

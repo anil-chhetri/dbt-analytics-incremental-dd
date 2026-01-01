@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_product
+    description: "Staging table for products data"
+    columns:
+      - name: id
+        description: "Unique identifier for each product"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: "Name of the product"
+        data_tests:
+          - not_null
+
+      - name: category
+        description: "Category of the product"
+        data_tests:
+          - not_null
+
+      - name: price
+        description: "Price of the product"
+        data_tests:
+          - not_null
+          - check_negative_value:
+              arguments:
+                column_name: "price"
+              save_failures: true
+              schema: "testing"
+              limit: 10
+
+      - name: stock_quantity
+        description: "Available stock quantity for the product"
+        data_tests:
+          - not_null
+          - check_negative_value:
+              arguments:
+                column_name: "stock_quantity"
+              save_failures: true
+              schema: "testing"
+              limit: 10
