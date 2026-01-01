@@ -1,1 +1,0 @@
-select * from "dev"."staging"."stg_order_item" where price < 0
