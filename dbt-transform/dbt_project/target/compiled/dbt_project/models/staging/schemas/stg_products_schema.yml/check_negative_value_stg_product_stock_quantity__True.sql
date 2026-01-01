@@ -1,0 +1,1 @@
+select * from "dev"."staging"."stg_product" where stock_quantity < 0

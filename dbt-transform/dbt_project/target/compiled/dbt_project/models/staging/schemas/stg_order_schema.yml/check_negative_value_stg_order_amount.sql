@@ -1,0 +1,1 @@
+select * from "dev"."staging"."stg_order" where amount < 0
