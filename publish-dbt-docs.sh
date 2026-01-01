@@ -44,7 +44,10 @@ git push -u origin $BRANCH
 # Now it's safe to delete files
 echo "Clearing old docs..."
 git rm -rf .
-
+rm -rf ./DataGenerator
+rm -rf ./dbt-transform
+rm -rf ./logs
+rm -rf dev.duckdb
 
 # # Return to original branch
 # git checkout $CURRENT_BRANCH
