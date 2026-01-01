@@ -49,7 +49,7 @@ rm -rf ./dbt-transform
 rm -rf ./logs
 rm -rf dev.duckdb
 
-# # Return to original branch
-# git checkout $CURRENT_BRANCH
+# Return to original branch
+git checkout $CURRENT_BRANCH
 
 echo "Docs published successfully!"
