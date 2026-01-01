@@ -4,7 +4,7 @@ dbt-connection:
   outputs:
     dev:
       type: duckdb
-      path: ./../../dev.duckdb
+      path: /workspaces/dbt-analytics-incremental-dd/dev.duckdb
       threads: 4
       schema: dbt_transform
       debug: true
